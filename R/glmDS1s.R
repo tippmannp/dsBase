@@ -10,4 +10,5 @@ glmDS1s <- function(formulas, family, weights, offset, data){
     
     return(res)
 }
+# AGGREGATE FUNCTION
 # glmDS1s

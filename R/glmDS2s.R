@@ -10,4 +10,5 @@ glmDS2s <- function (formulas, family, beta.vect, offset, weights, dataName) {
     
     return(res)
 }
+# AGGREGATE FUNCTION
 # glmDS2s
