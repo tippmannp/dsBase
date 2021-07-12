@@ -1,14 +1,34 @@
-glmDS1s <- function(formulas, family, weights, offset, data){
-    res = c()
+glmDS1s <- function(formulas_string, family, weights, offset, data) {
+    
+    res = c()    
+    
+    formulas = lapply(
+        sapply(
+            strsplit(
+                formulas_string,
+                split='|',
+                fixed=T
+            ),
+            identity
+        ),
+        stats::as.formula
+    )
     
     for (formula in formulas) {
-        res = c(
+        res = append(
             res,
-            glmDS1(formula, family, weights, offset, data)
+            glmDS1(
+                formula,
+                family,
+                weights,
+                offset,
+                data
+            )
         )        
     }
     
     return(res)
+    
 }
 # AGGREGATE FUNCTION
 # glmDS1s
