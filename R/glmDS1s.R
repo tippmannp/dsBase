@@ -5,7 +5,7 @@ glmDS1s <- function(formulas_string, family, weights, offset, data) {
     wantedlabels_y = sapply(
         strsplit(
             formulas_string,
-            split = '|',
+            split = ',',
             fixed = T
         ),
         identity
