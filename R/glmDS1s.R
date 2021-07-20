@@ -2,11 +2,19 @@ glmDS1s <- function(formulas_string, family, weights, offset, data) {
     
     res = c()
     
+    wantedlabels_y = sapply(
+        strsplit(
+            formulas_string,
+            split = '|',
+            fixed = T
+        ),
+        identity
+    )
     
-    n = length(formulas_string)
+    n = length(wantedlabels_y)
     
-    wantedlabels = formulas_string[1:n-1]
-    y = formulas_string[n]
+    wantedlabels = wantedlabels_y[1:n-1]
+    y = wantedlabels_y[n]
     
     formula_strings = c()
     
