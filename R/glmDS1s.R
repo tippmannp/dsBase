@@ -31,7 +31,7 @@ glmDS1s <- function(formulas_string, family, weights, offset, data) {
         # formula
         myformula = paste(var_y, var_x, sep='~')
         
-        formulas = append(formulas, myformula)
+        formula_strings = append(formula_strings, myformula)
     }
     
     formulas = lapply(
@@ -65,7 +65,7 @@ glmDS1s <- function(formulas_string, family, weights, offset, data) {
     }
     
     return(res)
-    
+
 }
 # AGGREGATE FUNCTION
 # glmDS1s
